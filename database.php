@@ -1,13 +1,8 @@
 <?php
 class Database {
 
-//    private $host = 'localhost';
-//    private $db_name = 'kristall-voda';
-//    private $user = 'admins';
-//    private $pass = '123';
     private $conn;
     
-
     // получение соединения с базой данных 
     public function getConnection() {
         $this->conn = null;
@@ -27,6 +22,7 @@ class Database {
         }
     }
 
+    // запрос к базе данных
     public function query($query) {
         try {
             return $stmt = $this->conn->query($query);
